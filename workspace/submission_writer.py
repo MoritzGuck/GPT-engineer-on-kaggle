@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 class SubmissionWriter:
     def __init__(self, data_loader, model_predictor, submission_file):
         self.data_loader = data_loader
@@ -7,8 +8,8 @@ class SubmissionWriter:
         self.submission_file = submission_file
 
     def write_submission(self):
-        ids = self.data_loader.test_data['id']
+        ids = self.data_loader.test_data["id"]
         y_pred = self.model_predictor.predict()
 
-        submission_df = pd.DataFrame({'id': ids, 'Machine failure': y_pred})
+        submission_df = pd.DataFrame({"id": ids, "Machine failure": y_pred})
         submission_df.to_csv(self.submission_file, index=False)

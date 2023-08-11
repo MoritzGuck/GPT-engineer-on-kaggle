@@ -4,7 +4,7 @@ class ModelPredictor:
         self.model_trainer = model_trainer
 
     def predict(self):
-        X_test = self.data_loader.test_data.drop('id', axis=1)
+        X_test = self.data_loader.test_data.drop("id", axis=1)
         y_pred = self.model_trainer.model.predict_proba(X_test)[:, 1]
 
         return y_pred

@@ -5,9 +5,9 @@ from model_predictor import ModelPredictor
 from submission_writer import SubmissionWriter
 
 # File paths
-train_file = 'data/train.csv'
-test_file = 'data/test.csv'
-submission_file = 'sample_submission.csv'
+train_file = "data/train.csv"
+test_file = "data/test.csv"
+submission_file = "sample_submission.csv"
 
 # Step 1: Load and preprocess the data
 data_loader = DataLoader(train_file, test_file)
@@ -21,7 +21,7 @@ model_trainer.train_model()
 # Step 3: Evaluate the model
 model_evaluator = ModelEvaluator(data_loader, model_trainer)
 f1_score = model_evaluator.evaluate_model()
-print(f'F1 Score: {f1_score}')
+print(f"F1 Score: {f1_score}")
 
 # Step 4: Make predictions
 model_predictor = ModelPredictor(data_loader, model_trainer)
