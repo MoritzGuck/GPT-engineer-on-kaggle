@@ -1,0 +1,25 @@
+We are writing a machine learning project in python using the library scikit-learn. The goal is to predict Machine Failure for a machine. It is a binary classification problem. We evaluate the performance of our model using the f1_score from the scikit-learn library. 
+
+The data for training and testing is in the folder data. 
+The data contains three files:
+- train.csv - the training dataset; Machine failure is the (binary) target (which, in order to align with the ordering of the original dataset, is not in the last column position)
+- test.csv - the test dataset; your objective is to predict the probability of Machine failure
+- sample_submission.csv - a sample submission file in the correct format
+
+The format of the train.csv file is as follows:
+id,Product ID,Type,Air temperature [K],Process temperature [K],Rotational speed [rpm],Torque [Nm],Tool wear [min],Machine failure,TWF,HDF,PWF,OSF,RNF
+0,L50096,L,300.6,309.6,1596,36.1,140,0,0,0,0,0,0
+1,M20343,M,302.6,312.1,1759,29.1,200,0,0,0,0,0,0
+
+The format of the test.csv file is as follows:
+id,Product ID,Type,Air temperature [K],Process temperature [K],Rotational speed [rpm],Torque [Nm],Tool wear [min],TWF,HDF,PWF,OSF,RNF
+136429,L50896,L,302.3,311.5,1499,38.0,60,0,0,0,0,0
+136430,L53866,L,301.7,311.0,1713,28.8,17,0,0,0,0,0
+
+The id column is unique for each sample. The Product ID column is the product ID of the machine. The Type column is the type of the machine. The Air temperature [K] column is the air temperature in Kelvin. The Process temperature [K] column is the process temperature in Kelvin. The Rotational speed [rpm] column is the rotational speed in rpm. The Torque [Nm] column is the torque in Nm. The Tool wear [min] column is the tool wear in minutes. The Machine failure column is the target. It is either 0 or 1. The TWF column is the tool wear failure. The HDF column is the heat dissipation failure. The PWF column is the power failure. The OSF column is the overstrain failure. The RNF column is the random failures. There are no missing values in the training or test dataset.
+
+The output of the program is the file sample_submission.csv. It contains the column id, which is the sample id and the column Machine failure, which is the predicted probability of Machine Failure. 
+The format of the sample_submission.csv file is as follows:
+id,Machine failure
+136429,0.5
+136430,0.5
