@@ -13,7 +13,7 @@ The prompt for our project can be found in the file `prompt`. After kicking off 
 
 The logs from the clarification questions and the engineered prompts from the GPT-engineer tool can be found in the `memory/logs` folder.
 
-## The generated code base
+## The generated code base
 
 The resulting codebase is found in the `workspace` folder. The file `all_output.txt` contains explanations from GPT-engineer on why it generated the code it did.
 
